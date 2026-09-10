@@ -104,7 +104,7 @@ HyperLight 是一个可高度自定义 **HyperOS 柔光玻璃**、且集成众�
 | 前提 | 解锁 Bootloader + Root（Magisk / KernelSU） |
 | 设备 | 仅手机；平板不适配且不接受相关反馈 |
 
-> HyperOS 3 请使用最后适配版本 [1.1.7](https://github.com/KiminonawaResa/HyperLight/releases/tag/1.1.7)。
+> HyperOS 3 请使用最后适配版本 [1.1.7](https://github.com/KiminonawaResa/HyperLight/releases/tag/1.1.7-2(API_101)-LiquidGlass)。
 
 ## 安装
 
