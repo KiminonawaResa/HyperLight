@@ -1,126 +1,152 @@
 <p align="center">
-  <img src="icon_hyperlight.png" alt="HyperLight logo" width="160" />
+  <img src="icon_hyperlight.png" alt="HyperLight" width="120">
 </p>
 
 <h1 align="center">HyperLight</h1>
 
 <p align="center">
-  为小米 HyperOS 3 补全高光模糊（Highlight Blur）视觉效果的 Xposed 模块。<br>
-  覆盖桌面、通知栏、控制中心等系统组件，通过反射调用系统内部 MaterialToken 接口，<br>
-  为不支持高光模糊的设备或场景注入完整的OS3高光材质风格，并提供材质混色与描边的自定义选项。
+  <b>Light up your HyperOS</b><br>
+  <span>可高度自定义的 HyperOS 柔光玻璃 · 系统美化模块</span>
 </p>
 
 <p align="center">
-  <a href="./README_EN.md">English</a> · <a href="https://github.com/KiminonawaResa/HyperLight">项目主页</a>
+  <a href="./README.md">简体中文</a> ·
+  <a href="./README_EN.md">English</a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/KiminonawaResa/HyperLight/releases"><img src="https://img.shields.io/github/v/release/KiminonawaResa/HyperLight?display_name=tag" alt="GitHub release"></a>
-  <a href="https://github.com/KiminonawaResa/HyperLight/stargazers"><img src="https://img.shields.io/github/stars/KiminonawaResa/HyperLight" alt="GitHub stars"></a>
-  <a href="https://github.com/KiminonawaResa/HyperLight/issues"><img src="https://img.shields.io/github/issues/KiminonawaResa/HyperLight" alt="GitHub issues"></a>
-  <a href="https://developer.android.com/"><img src="https://img.shields.io/badge/Android-15%2B-3DDC84?logo=android&logoColor=white" alt="Android"></a>
-  <a href="https://github.com/LSPosed/LSPosed"><img src="https://img.shields.io/badge/Framework-LSPosed%20%2F%20Xposed-5C6BC0" alt="Framework"></a>
+  <a href="https://github.com/KiminonawaResa/HyperLight/releases/latest"><img src="https://img.shields.io/github/v/release/KiminonawaResa/HyperLight?display_name=tag&label=release" alt="Release"></a>
+  <a href="https://github.com/KiminonawaResa/HyperLight/stargazers"><img src="https://img.shields.io/github/stars/KiminonawaResa/HyperLight?style=flat&label=stars" alt="Stars"></a>
+  <a href="https://github.com/KiminonawaResa/HyperLight/issues"><img src="https://img.shields.io/github/issues/KiminonawaResa/HyperLight" alt="Issues"></a>
+  <img src="https://img.shields.io/badge/Android-16%2B-3DDC84?logo=android&logoColor=white" alt="Android">
+  <img src="https://img.shields.io/badge/Xposed-API%20101-5C6BC0" alt="Xposed API">
+  <img src="https://img.shields.io/badge/version-1.2.0-informational" alt="Version">
 </p>
 
 ---
 
+## 简介
+
+HyperLight 是一个可高度自定义 **HyperOS 柔光玻璃**、且集成众多独有特色功能的 **系统美化模块**。  
+面向通知栏、控制中心、锁屏等系统界面，带来统一、精致的视觉体验。
+
+| 核心能力 | 说明 |
+| :--- | :--- |
+| **柔光玻璃** | 模糊、光影、折射、混色、预设等全参数可调（主推稳定能力） |
+| **高光材质** | 补全 / 强制启用高光，厚度与描边分档，混色独立配置 |
+| **液态玻璃** | 真液态玻璃渲染，长期 Beta，功耗与性能需自行权衡 |
+| **界面定制** | 时钟、堆叠通知、音量条、锁屏、图标配色等 |
+
 ## 功能
 
-### 桌面 (com.miui.home)
-- 文件夹 / 小部件 / 快捷菜单高光模糊
-- 自定义 Dock 栏
-- 自定义桌面网格布局（行数、列数、间距）
-- 自定义图标大小
-- 最近任务卡片圆角
-- 最近任务滑动振动反馈
-- 自动隐藏导航栏
-- 陀螺仪动态模糊效果
+<details>
+<summary><b>柔光玻璃 / 高光材质</b></summary>
 
-### 通知栏 (com.android.systemui)
-- 通知栏高光模糊
-- 自定义模糊半径
-- 通知混合颜色自定义
-- 长文本自动展开
-- 头部渐变模糊效果
-- 自定义居中大时钟
-- 时钟 / 日期字体粗细调节
-- 时钟 / 日期布局自定义
-- 日期格式自定义
-- 锁屏快捷按钮背景模糊
-- Toast 通知模糊
-- 导航栏相关 Hook
-- 陀螺仪动态模糊效果
+- **柔光玻璃**：模糊半径、柔光强度、饱和度、亮度、折射、反射、方向光、内部着色、烧灼等
+- 分场景亮度：锁屏、悬浮通知、侧边音量条、侧边栏与负一屏
+- 自定义混色（通知中心 / 控制中心磁贴与组件）
+- 内置预设 + 自定义预设保存 / 导入 / 分享
+- **高光材质**：超轻 ~ 超厚分档；纯净 / 叠加 / 信息系列
+- 描边：小 / 中 / 大；可启用实时动态描边与高阶自定义
+- 材质混色：浅色 / 深色分组，可按组件单独管理
 
-### 控制中心 (miui.systemui.plugin)
-- 控制中心高光模糊（磁贴、卡片、媒体、亮度、音量、设备中心等）
-- 阴影效果支持
-- 图标颜色自定义（浅色 / 深色 / 跟随系统）
-- 磁贴圆角调节
-- iOS 风格细音量条
-- 音量条展开动画
-- 陀螺仪动态模糊效果
+</details>
 
-### 其他
-- 个人助手小部件模糊优化
-- 安全中心侧边工具箱模糊优化
-- 副屏左滑手势注入
-- 系统设置中添加模块入口
-- 强制启用高级色彩风格模式
-- 强制在 Android 15 / 中端设备上启用高光材质
+<details>
+<summary><b>液态玻璃</b> · 长期 Beta</summary>
+
+- 折射、色散、景深、高光描边等渲染参数可调
+- 触摸光晕、光学边距、捕获缩放与刷新档位
+- 启用时会引导推荐配置，并提醒功耗上升与短期卡顿
+
+</details>
+
+<details>
+<summary><b>通知 / 锁屏</b> · <code>com.android.systemui</code></summary>
+
+- 柔光玻璃统一、背景模糊混色、头部渐变模糊
+- 长文本自动展开、禁止收纳为通知组 / 历史
+- 堆叠通知：起始线、模糊透明度渐变、时钟跟随
+- 居中大时钟：字重、布局、玻璃、日期格式、标题行
+- 锁屏：快捷按钮背景（高光 / 液态 / 柔光）、指纹图标、堆叠下沉、景深避让
+- 通知文本与悬浮通知文本颜色；Toast 模糊
+
+</details>
+
+<details>
+<summary><b>控制中心</b> · <code>miui.systemui.plugin</code></summary>
+
+- 柔光玻璃 / 高光材质 / 液态玻璃
+- 磁贴圆角；图标颜色（浅 / 深 / 跟随 / 反跟随 / 自定义）
+- 细音量条与按压动画（可实时调参）
+- 阴影、手电筒通知混色
+
+</details>
+
+<details>
+<summary><b>其他</b></summary>
+
+- 负一屏组件、安全中心侧边栏接入柔光玻璃与混色
+- 背屏左滑手势注入
+- 息屏与锁屏编辑景深相关调整
+- 系统设置模块入口；强制色彩风格高级模式 / 高光材质
+- 配置备份：剪贴板与 JSON 导入导出
+
+</details>
 
 ## 兼容性
 
-- 最低 Android 版本：Android 15 (API 35)
-- 目标 Android 版本：Android 16 (API 36)
-- 支持系统：HyperOS 3.x
-- Xposed 框架：LSPosed
-- 仅支持手机设备，平板等非手机设备均不适配
+| 项目 | 要求 |
+| :--- | :--- |
+| 系统 | **HyperOS 4**（本分支 1.2.0+） |
+| Android | **16+**（minSdk 36 / targetSdk 37） |
+| 框架 | 支持 Xposed API **101** 的 LSPosed |
+| 前提 | 解锁 Bootloader + Root（Magisk / KernelSU） |
+| 设备 | 仅手机；平板不适配且不接受相关反馈 |
+
+> HyperOS 3 请使用最后适配版本 [1.1.7](https://github.com/KiminonawaResa/HyperLight/releases/tag/1.1.7)。
 
 ## 安装
 
-1. 安装 LSPosed 框架
-2. 下载并安装 HyperLight
-3. 在 LSPosed 管理器中启用模块
-4. 勾选以下作用域：
-   - `com.android.systemui`
-   - `com.miui.home`
-   - `com.miui.securitycenter`
-   - `com.miui.personalassistant`
-   - `miui.systemui.plugin`
-   - `com.android.settings`
-   - `com.xiaomi.subscreencenter`
-5. 重启设备或重启相关应用
-6. 打开 HyperLight 进行配置
+1. 解锁 Bootloader，并获取 Root
+2. 安装支持 API 101 的 LSPosed
+3. 安装 [HyperLight APK](https://github.com/KiminonawaResa/HyperLight/releases/latest)
+4. 在 LSPosed 中启用模块，并勾选作用域：
 
-## 问题反馈
+   | 包名 | 组件 |
+   | :--- | :--- |
+   | `com.android.systemui` | 通知 / 锁屏 |
+   | `miui.systemui.plugin` | 控制中心 |
+   | `com.miui.securitycenter` | 安全中心 |
+   | `com.miui.personalassistant` | 智能助理（负一屏） |
+   | `com.android.settings` | 系统设置 |
+   | `com.xiaomi.subscreencenter` | 背屏 |
+   | `com.miui.aod` | 息屏与锁屏编辑 |
 
-在 Issues 中提交反馈，请附带：
+5. 重启设备或相关应用
+6. 打开 HyperLight，按需启用柔光玻璃 / 高光 / 液态玻璃并调参
 
-1. Xposed 框架日志（LSPosed: 设置 → 日志 → 详细日志）
-2. 设备型号和系统版本
-3. 复现步骤
-4. 预期行为和实际行为
-5. 相关截图
+## 反馈
+
+请通过 [Issues](https://github.com/KiminonawaResa/HyperLight/issues) 提交，并附上：
+
+1. LSPosed 详细日志（设置 → 日志 → 详细日志）
+2. 机型与系统版本
+3. 复现步骤与预期 / 实际行为
+4. 相关截图
 
 ## 技术栈
 
-- Kotlin + Java
-- Jetpack Compose
-- Xposed Framework (XposedBridgeApi-89)
-- MiuiX KMP UI
+- Kotlin · Java · Jetpack Compose
+- Xposed API 101 · libxposed
+- [MiuiX](https://github.com/miuix-kotlin-multiplatform/miuix) · Haze · Capsule
 
 ## 许可证
 
 本项目仅供学习交流使用。
 
-## 致谢
+## 社区
 
-- [MiuiX](https://github.com/miuix-kotlin-multiplatform/miuix) - UI 组件库
-
-## Star History
-
-[![Star History Chart](https://star-history.dera.page/svg?repos=KiminonawaResa/HyperLight&type=Date)](https://star-history.dera.page/#KiminonawaResa/HyperLight&Date)
-
-## 交流与讨论
-
-Telegram 群组：[HyperLight](https://t.me/+8M40i3aiAEc0ZTg1)
+- Telegram 群组：[HyperLight](https://t.me/+8M40i3aiAEc0ZTg1)
+- 开发者：愛君の名は / KiminonawaResa
+- 液态玻璃渲染代码：Aymon
