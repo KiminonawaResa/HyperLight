@@ -1,127 +1,151 @@
 <p align="center">
-  <img src="icon_hyperlight.png" alt="HyperLight logo" width="160" />
+  <img src="icon_hyperlight.png" alt="HyperLight" width="120">
 </p>
 
 <h1 align="center">HyperLight</h1>
 
 <p align="center">
-  An Xposed module that brings highlight blur visual effects to Xiaomi HyperOS 3.<br>
-  Covers system launcher, notification shade, control center and other system components by<br>
-  invoking the internal MaterialToken API via reflection, injecting full OS3 highlight material<br>
-  style on devices or scenarios that lack it, with material color blend and stroke customization.
+  <b>Light up your HyperOS</b><br>
+  <span>Highly customizable soft glass · system beautification for HyperOS</span>
 </p>
 
 <p align="center">
-  <a href="./README.md">简体中文</a> · <a href="https://github.com/KiminonawaResa/HyperLight">Project Home</a>
+  <a href="./README.md">简体中文</a> ·
+  <a href="./README_EN.md">English</a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/KiminonawaResa/HyperLight/releases"><img src="https://img.shields.io/github/v/release/KiminonawaResa/HyperLight?display_name=tag" alt="GitHub release"></a>
-  <a href="https://github.com/KiminonawaResa/HyperLight/stargazers"><img src="https://img.shields.io/github/stars/KiminonawaResa/HyperLight" alt="GitHub stars"></a>
-  <a href="https://github.com/KiminonawaResa/HyperLight/issues"><img src="https://img.shields.io/github/issues/KiminonawaResa/HyperLight" alt="GitHub issues"></a>
-  <a href="https://developer.android.com/"><img src="https://img.shields.io/badge/Android-15%2B-3DDC84?logo=android&logoColor=white" alt="Android"></a>
-  <a href="https://github.com/LSPosed/LSPosed"><img src="https://img.shields.io/badge/Framework-LSPosed%20%2F%20Xposed-5C6BC0" alt="Framework"></a>
+  <a href="https://github.com/KiminonawaResa/HyperLight/releases/latest"><img src="https://img.shields.io/github/v/release/KiminonawaResa/HyperLight?display_name=tag&label=release" alt="Release"></a>
+  <a href="https://github.com/KiminonawaResa/HyperLight/stargazers"><img src="https://img.shields.io/github/stars/KiminonawaResa/HyperLight?style=flat&label=stars" alt="Stars"></a>
+  <a href="https://github.com/KiminonawaResa/HyperLight/issues"><img src="https://img.shields.io/github/issues/KiminonawaResa/HyperLight" alt="Issues"></a>
+  <img src="https://img.shields.io/badge/Android-16%2B-3DDC84?logo=android&logoColor=white" alt="Android">
+  <img src="https://img.shields.io/badge/Xposed-API%20101-5C6BC0" alt="Xposed API">
+  <img src="https://img.shields.io/badge/version-1.2.0-informational" alt="Version">
 </p>
 
 ---
 
+## Overview
+
+HyperLight is a **highly customizable soft-glass module for HyperOS** that also packs many unique customization features — a **system beautification module** for the notification shade, control center, lockscreen, and more.
+
+| Core | Description |
+| :--- | :--- |
+| **Soft Glass** | Full control over blur, gloss, refraction, blend colors, and presets (primary stable capability) |
+| **Highlight Material** | Complete / force-enable highlight; thickness & stroke tiers; independent blend colors |
+| **Liquid Glass** | True liquid-glass rendering — long-term Beta; mind battery and performance |
+| **UI Tweaks** | Clock, stacked notifications, volume bar, lockscreen, icon colors, and more |
+
 ## Features
 
-### Launcher (com.miui.home)
-- Folder / widget / shortcut menu highlight blur
-- Custom dock bar
-- Custom desktop grid layout (rows, columns, padding)
-- Custom icon size
-- Recent tasks card corner radius
-- Haptic feedback on recent tasks swipe
-- Auto-hide navigation bar
-- Gyroscope-based dynamic blur
+<details>
+<summary><b>Soft Glass / Highlight Material</b></summary>
 
-### Notification Shade (com.android.systemui)
-- Notification shade highlight blur
-- Custom blur radius
-- Notification blend color customization
-- Long text auto-expand
-- Header gradient blur effect
-- Custom centered large clock
-- Clock / date font weight adjustment
-- Clock / date layout customization
-- Date format customization
-- Lockscreen shortcut button background blur
-- Toast notification blur
-- Navigation bar hooks
-- Gyroscope-based dynamic blur
+- **Soft glass**: blur radius, luminance, saturation, brightness, refraction, reflection, directional light, inner tint, bloom, and more
+- Per-scene background brightness: lockscreen, heads-up, volume bar, sidebar & negative-one screen
+- Custom blend colors for notification center / control center tiles & widgets
+- Built-in presets + save / import / share custom presets
+- **Highlight material**: extra-thin to extra-thick tiers; pure / overlay / info series
+- Strokes: small / medium / large; optional realtime dynamic stroke & advanced tuning
+- Material blend colors: light / dark groups, per-component management
 
-### Control Center (miui.systemui.plugin)
-- Control center highlight blur (tiles, cards, media, brightness, volume, device center, etc.)
-- Shadow effect support
-- Icon color customization (Light / Dark / Follow System)
-- Tile corner radius adjustment
-- iOS-style thin volume bar
-- Volume bar expand animation
-- Gyroscope-based dynamic blur
+</details>
 
-### Other
-- Personal Assistant widget blur optimization
-- Security Center side toolbox blur optimization
-- Sub-screen left swipe gesture injection
-- Module entry in system settings
-- Force enable advanced color style mode
-- Force enable highlight material on Android 15 / mid-range devices
+<details>
+<summary><b>Liquid Glass</b> · long-term Beta</summary>
+
+- Tunable refraction, chromatic aberration, depth, and highlight stroke
+- Touch glow, optical padding, capture scale, and refresh tiers
+- Enabling applies recommended defaults and warns about higher power use and initial jank
+
+</details>
+
+<details>
+<summary><b>Notification / Lockscreen</b> · <code>com.android.systemui</code></summary>
+
+- Unified soft glass, blend color, header gradient blur
+- Long-text auto-expand; disable history fold / notification groups
+- Stacked notifications: start line, blur opacity gradient, clock follow
+- Centered large clock: weight, layout, glass, date format, title row
+- Lockscreen: button backgrounds (highlight / liquid / soft), fingerprint icon, stack sink, depth avoid
+- Notification & heads-up text colors; toast blur
+
+</details>
+
+<details>
+<summary><b>Control Center</b> · <code>miui.systemui.plugin</code></summary>
+
+- Soft glass / highlight material / liquid glass
+- Tile corner radius; icon colors (light / dark / follow / anti-follow / custom)
+- Thin volume bar with nudge animation (live-tunable)
+- Shadows; flashlight notification blend
+
+</details>
+
+<details>
+<summary><b>Other</b></summary>
+
+- Personal Assistant widgets & Security Center toolbox with soft glass / blend
+- Sub-screen left-swipe gesture injection
+- AOD / lockscreen-edit depth-related tweaks
+- Settings module entry; force advanced color style / highlight material
+- Config backup via clipboard and JSON import / export
+
+</details>
 
 ## Compatibility
 
-- Minimum Android: Android 15 (API 35)
-- Target Android: Android 16 (API 36)
-- Supported system: HyperOS 3.x
-- Xposed framework: LSPosed
-- Only supports mobile devices; tablets and other non-mobile devices are not compatible
+| Item | Requirement |
+| :--- | :--- |
+| System | **HyperOS 4** (this branch, 1.2.0+) |
+| Android | **16+** (minSdk 36 / targetSdk 37) |
+| Framework | LSPosed with Xposed API **101** |
+| Prerequisites | Bootloader unlocked + Root (Magisk / KernelSU) |
+| Device | Phones only; tablets unsupported |
+
+> For HyperOS 3, use the last supported release [1.1.7](https://github.com/KiminonawaResa/HyperLight/releases/tag/1.1.7-2(API_101)-LiquidGlass).
 
 ## Installation
 
-1. Install LSPosed framework
-2. Download and install HyperLight
-3. Enable the module in LSPosed Manager
-4. Select the following scopes:
-   - `com.android.systemui`
-   - `com.miui.home`
-   - `com.miui.securitycenter`
-   - `com.miui.personalassistant`
-   - `miui.systemui.plugin`
-   - `com.android.settings`
-   - `com.xiaomi.subscreencenter`
-5. Reboot the device or restart the relevant apps
-6. Open HyperLight to configure
+1. Unlock Bootloader and obtain Root
+2. Install an LSPosed build that supports API 101
+3. Install the [HyperLight APK](https://github.com/KiminonawaResa/HyperLight/releases/latest)
+4. Enable the module in LSPosed and select scopes:
 
-## Bug Reports
+   | Package | Component |
+   | :--- | :--- |
+   | `com.android.systemui` | Notification / lockscreen |
+   | `miui.systemui.plugin` | Control center |
+   | `com.miui.securitycenter` | Security Center |
+   | `com.miui.personalassistant` | Personal Assistant |
+   | `com.android.settings` | System Settings |
+   | `com.xiaomi.subscreencenter` | Sub-screen |
+   | `com.miui.aod` | AOD / lockscreen edit |
 
-Please submit feedback in Issues with the following information:
+5. Reboot the device or the relevant apps
+6. Open HyperLight and enable soft glass / highlight / liquid glass as desired
 
-1. Xposed framework logs (LSPosed: Settings -> Logs -> Verbose logs)
+## Bug reports
+
+Please open an [Issue](https://github.com/KiminonawaResa/HyperLight/issues) and include:
+
+1. LSPosed verbose logs (Settings → Logs → Verbose logs)
 2. Device model and system version
-3. Steps to reproduce
-4. Expected vs actual behavior
-5. Screenshots
+3. Steps to reproduce and expected vs actual behavior
+4. Screenshots if available
 
-## Tech Stack
+## Tech stack
 
-- Kotlin + Java
-- Jetpack Compose
-- Xposed Framework (XposedBridgeApi-89)
-- MiuiX KMP UI
+- Kotlin · Java · Jetpack Compose
+- Xposed API 101 · libxposed
+- [MiuiX](https://github.com/miuix-kotlin-multiplatform/miuix) · Haze · Capsule
 
 ## License
 
-This project is for educational and personal use only.
+For educational and personal use only.
 
-## Acknowledgments
+## Community
 
-- [MiuiX](https://github.com/miuix-kotlin-multiplatform/miuix) - UI component library
-
-## Star History
-
-[![Star History Chart](https://star-history.dera.page/svg?repos=KiminonawaResa/HyperLight&type=Date)](https://star-history.dera.page/#KiminonawaResa/HyperLight&Date)
-
-## Communication & Discussion
-
-Telegram Group: [HyperLight](https://t.me/+8M40i3aiAEc0ZTg1)
+- Telegram group: [HyperLight](https://t.me/+8M40i3aiAEc0ZTg1)
+- Developer: 愛君の名は / KiminonawaResa
+- Liquid glass rendering: Aymon
