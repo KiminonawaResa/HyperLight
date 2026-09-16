@@ -144,6 +144,10 @@ Please open an [Issue](https://github.com/KiminonawaResa/HyperLight/issues) and 
 
 For educational and personal use only.
 
+## Star History
+
+[![Star History Chart](https://star-history.dera.page/svg?repos=KiminonawaResa/HyperLight&type=Date)](https://star-history.dera.page/#KiminonawaResa/HyperLight&Date)
+
 ## Community
 
 - Telegram group: [HyperLight](https://t.me/+8M40i3aiAEc0ZTg1)
