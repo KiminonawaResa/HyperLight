@@ -145,6 +145,10 @@ HyperLight 是一个可高度自定义 **HyperOS 柔光玻璃**、且集成众�
 
 本项目仅供学习交流使用。
 
+## Star History
+
+[![Star History Chart](https://star-history.dera.page/svg?repos=KiminonawaResa/HyperLight&type=Date)](https://star-history.dera.page/#KiminonawaResa/HyperLight&Date)
+
 ## 社区
 
 - Telegram 群组：[HyperLight](https://t.me/+8M40i3aiAEc0ZTg1)
